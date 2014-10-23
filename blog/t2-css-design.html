@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="blog-stylesheet.css">
+    <title>
+        Relative vs. Absolute vs. Fixed
+     </title>
+  </head>
+  <body>
+    <div id="heading">
+      <h2> Difference Between Relative, Absolute, and Fixed Positioning </h2>
+      <h5> 10/21/14 </h5>
+    </div>
+
+    <div id="blogText">
+        <p>
+          Most elements on a webpage -- paragraphs, header, etc. -- are rectangular blocks of pixels.  You can change the particular behaviors of these blocks by setting their display property to inline, inline-block, or block but they are still fundamentally blocks of pixels.  Relative, absolute, and fixed positioning all move and pin these blocks in different ways.
+          <br><br>
+          Relative positioning seems to be one of the more commonly used types of positioning and it confused me for a while this week.  The important thing to realize is that ‘relative position’ positions an element relative to where the element would naturally fall if no position property was set.  You can see this by enabling ‘position: relative’ and then setting all the other positioning attributes to none.  The element will be in the exact same place it was before you turned on any positioning.
+           <br><br>
+          Absolute positioning is the type to use when you want total control over where an element goes.  You enable ‘position: absolute’ and then you set the positioning attributes to move the element exactly where you want it.  Each position attribute value will move your block in relation to the next parent element with absolute positioning.  If there is no such element the positioning will be relative to the html tag.
+           <br><br>
+          Fixed is the last type of positioning I learned about this week and seems to be one of the most novel.  When ‘position: fixed’ is set, the element is positioned relative to the user’s screen.  When you see nav bars which are glued at the top of your screen and float down with you as you scroll down, this has been accomplished by giving the element position fixed.
+           <br><br>
+        </p>
+    </div>
+
+    <div id="blogCitations">
+        1.  Citations and Formulas
+        <br><br>
+    </div>
+
+    <div id="blogButtonBack">
+      <a href="#">Previous Post</a>
+    </div>
+    <div id="blogButtonNext">
+      <a href="#">Next Post</a>
+    </div>
+
+  </body>
