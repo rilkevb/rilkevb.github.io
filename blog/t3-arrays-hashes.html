@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="blog-stylesheet.css">
+    <title>
+        Rilke's Blog
+     </title>
+  </head>
+  <body>
+    <div id="heading">
+      <h2> Arrays and Hashes in Ruby </h2>
+      <h5> 10/25/14</h5>
+    </div>
+
+    <div id="blogText">
+        <p>
+          In Ruby an array is an ordered list of items.  Every slot in the list points to a particular object or value and you can change what the slot points to. (1)  Like in other computer languages Ruby arrays are zero indexed.  However, unlike in older languages, Ruby arrays are default dynamically resizable.  Also, should the programmer index outside an array in Ruby, the language returns 'nil' rather than crashing and/or doing something worse.  Arrays are a useful data structure when the <em> sequence </em> of the stored values is important or when it is crucial to have the stored values integer-indexed. (2)
+          <br> <br>
+          If the programmer doesn't need or want integer indexing then Ruby hashes might be a more appropriate data structure to use.  In Ruby, a hash is "a dictionary-like collection of unique keys and their values" (3)  Instead of using integers for indexing, a hash can use any object type:
+          <br><br>
+          <span id="ruby">
+            favorite_foods = {'Al'=>'pie','Ed'=>'tofu'}
+          </span>
+          <br><br>
+          In this example, when the key <span id="ruby">'Al'</span> is referenced, the value <span id="ruby">'pie'</span> will be returned.  While this is the standard structure and behavior of a 'dictionary' data structure, Ruby calls it a 'hash' because the underlying sorting and retrieval is being run through a hash function. (4)
+          <br><br>
+        </p>
+    </div>
+
+    <div id="blogCitations">
+        (1) http://rubylearning.com/satishtalim/ruby_arrays.html
+        <br><br>
+        (2) http://www.ruby-doc.org/core-2.1.3/Array.html
+        <br><br>
+        (3) http://ruby-doc.org/core-2.1.3/Hash.html
+        <br><br>
+        (4) http://en.wikipedia.org/wiki/Hash_function
+    </div>
+
+    <div id="blogButtonBack">
+      <a href="#">Previous Post</a>
+    </div>
+    <div id="blogButtonNext">
+      <a href="#">Next Post</a>
+    </div>
+
+  </body>
