@@ -1,0 +1,29 @@
+/* include your css here */
+
+        html {
+            font-family: 'Open Sans', sans-serif;
+        }
+        #title {
+          background: blue;
+          color: white;
+          text-align: center;
+          height: 100px;
+          width: 100%;
+          margin-top:0px;
+        }
+        .article {
+            background: green;
+            color: white;
+            padding: 10px;
+            margin: 50px;
+        }
+        #compare {
+            background: purple;
+        }
+        div:nth-child(1) {
+            background: red;
+        }
+        h1 {
+            margin: 0;
+        }
+
