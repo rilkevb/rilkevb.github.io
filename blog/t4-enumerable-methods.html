@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="blog-stylesheet.css">
+    <title>
+        Rilke's Blog
+     </title>
+  </head>
+  <body>
+    <div id="heading">
+      <h2> Appreciating Enumerable#group_by </h2>
+      <h5> 10/30/14 </h5>
+    </div>
+
+    <div id="blogText">
+        <p>
+          The Ruby Enumerable mixin includes many extremely useful methods.  Any Ruby class which includes the <span id="ruby">each</span> method gains access to the Enumerable methods.
+          <br><br>
+          I intend to slowly write about many of these methods but the first one I want to focus on is Enumerable#group_by.  The general structure of group_by is:
+          <br><br>
+          <span id="ruby">collection.group_by { |obj| block }</span>
+          <br><br>
+          When it is called, the group_by method groups the collection according to the result of the block.  The method then returns a hash where the keys are the result of the logic block and the values for each key are those members of the collection which returned that key.
+          <br><br>
+          For example, imagine you had an array of 9 integers and you wanted to know what the result of performing modulo 5 on each one was.  You could use group_by like so:
+          <br><br>
+          <span id="ruby">
+            num = [1,2,3,4,5,6,7,8,9]
+            <br>
+            (num).group_by{|i| i%5 }</span>
+            <br><br>
+          RESULT: <br><br>
+          <span id="ruby">{1=>[1, 6], 2=>[2, 7], 3=>[3, 8], 4=>[4, 9], 0=>[5]}</span>
+          <br><br>
+          From the returned hash we can see that 1%5 and 6%5 equal 1, 2%5 and 7%5 equal 2, etc..
+          <br><br>
+          We can use group_by to group the results of all sorts of mathematical manipulations.  We can also use it return other types of statements.  Imagine we want to know which words of a particular quote contain a particular substring and then group them according to this criteria.  All we need to do is:
+          <br><br>
+          <span id="ruby">quote = ["to","make","the","world","work","for","100%","of","humanity"] <br>
+          (quote).group_by{|i| i.include?('ak’)}</span>
+          <br><br>
+
+          RETURNS: <br><br>
+          <span id="ruby">{false=>["to", "the", "world", "work", "for", "100%", "of", "humanity"], true=>["make"]}</span>
+          <br><br>
+          And now we know that in the given quote, "make" is the only word which contains the substring "ak".
+          <br><br>
+          These examples are contrived but it is easy to imagine querying large data sets where group_by would be very useful.
+          <br><br>
+
+        </p>
+    </div>
+
+    <div id="blogCitations">
+        1.  http://ruby-doc.org/core-2.0/Enumerable.html#method-i-group_by
+        <br><br>
+        <br><br>
+    </div>
+
+    <div id="blogButtonBack">
+      <a href="#">Previous Post</a>
+    </div>
+    <div id="blogButtonNext">
+      <a href="#">Next Post</a>
+    </div>
+
+  </body>
