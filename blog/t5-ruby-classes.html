@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="blog-stylesheet.css">
+    <title>
+        Rilke's Blog
+     </title>
+  </head>
+  <body>
+    <div id="heading">
+      <h2> Ruby Classes and the Collatz Conjecture </h2>
+      <h5> 11/7/14 </h5>
+    </div>
+
+    <div id="blogText">
+        <p>
+          Ruby is an object oriented programming(OOP) language and because of this it is dominated by classes.  Classes are extensible templates used to create other code objects.  A class can store basic information (attributes) and ways of doing things (methods).  A general class is used to create specific objects (also called "instances of the class").  A class is like an apple pie recipe.  It contains lists of ingredients (attributes) and instructions for what to do (methods).  If you take this recipe and make a particular apple pie then that specific apple pie is like an object or an "instance of the class".
+          <br><br>
+          Classes are a natural choice for organizing programs(1) when the programmer wants to group specific data and functions into one unit.  If you are modelling a physical object it makes sense to put all its attributes and the actions it can perform into one class.  Or, if you are building a collection of tools to analyze or present an abstract problem it can make sense to group all of them into one class.
+          <br><br>
+          An example of using classes in this second manner is this class which I wrote:  (Please pardon the formatting; I'll make it easier to read later.)
+          <br><br>
+          <span id="ruby">
+          class Collatz_Conjecture <br><br>
+            attr_accessor :initial_number <br><br>
+
+            def initialize(number) <br>
+              @initial_number = number <br>
+            end <br>
+            <br><br>
+            def explanation <br>
+              puts "The Collatz_Conjecture is named after the mathematician Lothar Collatz who proposed it in 1937."<br>
+              puts "It is a mathematical conjecture which states:"<br>
+              puts ''<br>
+              puts "Take any natural number X.  If X is even, divide it by 2.  If X is odd, multiply it by 3 and add 1."<br>
+              puts "Repeat this process indefinitely.  The conjecture is that no matter what number you start with, "<br>
+              puts "you will always eventually reach 1.  (wikipedia)"<br>
+              puts " "<br>
+              puts "The sequence of numbers produced by executing the above algorithm is often called a 'hailstone sequence'"<br>
+              puts "because the numbers go up and down erratically like hail in a thundercloud before it reaches the ground."<br>
+              puts ""<br>
+            end<br>
+            <br>
+            def print_numeric_sequence<br>
+              num = @initial_number<br>
+              puts "The Numeric Sequence for the Given Value: "<br>
+              output = [num]<br>
+              until num == 1<br>
+                if num%2 == 0<br>
+                  num = num/2<br>
+                else<br>
+                  num = ((num * 3) + 1)<br>
+                end<br>
+                output << num<br>
+              end<br>
+              output<br>
+            end<br>
+            <br>
+            def print_graph_approximation<br>
+              num = @initial_number<br>
+              puts "An Approximation of the Hailstone Sequence for the Given Value:"<br>
+              print ('-' * num)<br>
+              puts "  #{num}"<br>
+              until num == 1<br>
+                if num%2 == 0<br>
+                  num = num/2<br>
+                else<br>
+                  num = ((num * 3) + 1)<br>
+                end<br>
+                print ('-' * num)<br>
+                puts "  #{num}"<br>
+              end<br>
+            end<br>
+            <br>
+            def proof<br>
+              puts "'Mathematics is not yet ready for such problems.' -Paul Erdos"<br>
+            end<br>
+          end<br>
+          </span>
+          <br><br>
+          The code is a little long but basically it allows a person to see and play around with the Collatz Conjecture and resulting Hailstone Sequences.
+          <br><br>
+          In case you are wondering what the Collatz Conjecture is, all you need to do is create a new object (pass it any positive integer you want) and call the explanation method.
+          <br><br>
+          <span id="ruby">
+            attempt1 = Collatz_Conjecture.new(17)<br>
+            p attempt1.explanation<br>
+          </span>
+          <br><br>
+          This returns:   <br><br>
+          <span id="ruby">The Collatz_Conjecture is named after the mathematician Lothar Collatz who proposed it in 1937.
+          It is a mathematical conjecture which states:<br><br>
+
+          Take any natural number X.  If X is even, divide it by 2.  If X is odd, multiply it by 3 and add 1.<br>
+          Repeat this process indefinitely.  The conjecture is that no matter what number you start with,<br>
+          you will always eventually reach 1.  (wikipedia)<br><br>
+
+          The sequence of numbers produced by executing the above algorithm is often called a 'hailstone sequence'<br>
+          because the numbers go up and down erratically like hail in a thundercloud.<br>
+          </span>
+          <br><br>
+          If you want to the numeric sequence resulting from the initialization value you passed, you just type:
+          <br><br>
+          <span id="ruby">p attempt1.print_numeric_sequence </span> <br> <br>
+          For this example, using 17 as the initial value, it returns: <br> <br>
+          <span id="ruby">[17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1]  </span> <br> <br>
+          If you want a more graphical representation of the sequence you can type: <br> <br>
+          <span id="ruby">attempt1.print_graph_approximation </span> <br> <br>
+          And it will print a series of labelled bars to the console to help better visualize the sequence: <br> <br>
+          <span id="ruby">-----------------  17 <br>
+          ----------------------------------------------------  52 <br>
+          --------------------------  26 <br>
+          -------------  13 <br>
+          ----------------------------------------  40 <br>
+          --------------------  20 <br>
+          ----------  10 <br>
+          -----  5 <br>
+          ----------------  16 <br>
+          --------  8 <br>
+          ----  4 <br>
+          --  2 <br>
+          -  1 <br>
+           </span>
+           <br> <br>
+          If you are wondering about the proof for this wonderful bit of mathematics you can even request to see it with: <br> <br>
+          <span id="ruby">puts attempt1.proof </span>
+          <br> <br>
+          However, it doesn't return the most satisfying answer.
+          <br> <br>
+        </p>
+    </div>
+
+    <div id="blogCitations">
+      Footnotes: <br>
+        1.  Classes/Objects are one way to structure programs.  Although Ruby is an OOP I generally think structuring programs in a functional manner is easier to read, easier to program, directly helps manage program complexity, and lends itself more easily to multi-threading and concurrent execution. <br>
+        2.  wikipedia <br>
+        3.  The Math Book, Pickover, Clifford A.
+        <br><br>
+        <br><br>
+    </div>
+
+    <div id="blogButtonBack">
+      <a href="#">Previous Post</a>
+    </div>
+    <div id="blogButtonNext">
+      <a href="#">Next Post</a>
+    </div>
+
+  </body>
