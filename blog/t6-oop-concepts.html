@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="blog-stylesheet.css">
+    <title>
+        Rilke's Blog
+     </title>
+  </head>
+  <body>
+    <div id="heading">
+      <h2> OOP vs. FP in 2 Minutes </h2>
+      <h5> 11/16/14 </h5>
+    </div>
+
+    <div id="blogText">
+        <p>
+          Object Oriented Programming (OOP) and Functional Programming (FP) are two different programming paradigms.  Each has their supporters and ideal applications.  A full description and discussion of each is far beyond the scope of a blog post but what is the essential difference between them?  What is the two minute take-away when comparing OOP and FP?
+          <br> <br>
+          OOP is based around the concept of objects.  These objects nearly always arise from classes (class-based programming) or prototypes (prototype-based programming).  A given OO program consists of object which interact with each other.  How these interactions are structured is determined by the inheritance hierarchy and the ways in which methods and attributes are encapsulated.  Different languages have different features but most OOP languages also include subtype polymorphism and dynamic dispatch.  In essence, these features mean that OO programs work by creating and modifying a state;  information is stored in object attributes and manipulated by object methods until it has reached the correct form (the correct state). (1)
+
+          <br><br>
+          This is in direct contrast to FP which does everything it can to avoid mutable data and changing state.  Rather, FP languages are built around the evaluation of mathematical functions.  In OOP an expression such as "x = x + 1" means that we are assigning the value of "x + 1" to the original "x" variable but in FP languages the symbol "=" is actually used to represent equality rather than assignment.  In this view, "x = x + 1" is impossible.  The output of an FP statement depends only on the input.  The output does not depend on the general state of the program, the time of execution, etc..  If you give the same input, you will get the same output.  This eliminates most side effects and provides referential transparency -- the ability to replace an expression with its value without changing the output of a program.  FP enthusiasts believe this makes it easier to write, understand, optimize, and parallelize their programs. (2)
+
+        </p>
+    </div>
+
+    <div id="blogCitations">
+        1.  http://en.wikipedia.org/wiki/Object-oriented_programming <br>
+        2.  http://en.wikipedia.org/wiki/Functional_programming
+                <br><br>
+    </div>
+
+    <div id="blogButtonBack">
+      <a href="#">Previous Post</a>
+    </div>
+    <div id="blogButtonNext">
+      <a href="#">Next Post</a>
+    </div>
+
+  </body>
