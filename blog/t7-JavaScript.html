@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="blog-stylesheet.css">
+    <title>
+        Rilke's Blog
+     </title>
+  </head>
+  <body>
+    <div id="heading">
+      <h2> Ruby Classes vs. JavaScript Constructor Functions </h2>
+      <h5> 11/23/14 </h5>
+    </div>
+
+    <div id="blogText">
+        <p>
+          After studying Ruby for four weeks, this week we jumped into JavaScript.  This was my first exposure to JavaScript and I found the differences between it and Ruby a little disorienting.  By far, one of my biggest challenges was understanding how Ruby classes compare to JavaScript constructor functions.
+
+          <br> <br>
+          In Ruby, if you want to create a series of related objects the easiest way to do this is to write a class and then use the 'new' method to create instances of that class.  The class declaration can include attributes and methods.  It can control the access to these properties using keywords like 'private' and it can inherit from other classes.  Since everything in Ruby is an object this means that classes, which create objects, are themselves objects.  This seems strangely circular but in practice can be easily ignored.
+
+
+          <br><br>
+          Creating objects in Javascript is a little different.  Instead of classes, JavaScript uses constructors.  Javascript constructors are functions which happen to be used as constructors (things which create new objects).  Unlike other languages Javascript doesn't have a special constructor feature.  To call a constructor we use the 'new' keyword.  When this is done four things happen.  First, a new object is created.  Second, the constructor property of that object is set.  Third, the new object is set to delegate to the constructor's prototype object.  Fourth, the constructor function itself is called.  These four steps result in a new object being created.  These constructor functions can set properties of the object (like attributes in Ruby) and can implement subfunctions of the object which can be used like object methods in Ruby.
+        </p>
+    </div>
+
+    <div id="blogCitations">
+
+        <br><br>
+    </div>
+
+    <div id="blogButtonBack">
+      <a href="#">Previous Post</a>
+    </div>
+    <div id="blogButtonNext">
+      <a href="#">Next Post</a>
+    </div>
+
+  </body>
